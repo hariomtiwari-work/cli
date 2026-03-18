@@ -41,7 +41,7 @@ func (o *CreateUserOptions) Run(cmd *cobra.Command, args []string) error {
 	Username := args[0]
 
 	if !strings.Contains(Username, "@") || !strings.Contains(Username, ".") {
-    return fmt.Errorf("invalid email format: expected something like user@example.com")
+		return fmt.Errorf("invalid email format: expected something like user@example.com")
 	}
 	err := CreateUser(cmd, Username, o.Groups, o.ConsoleAccessInputs)
 	if err != nil {
